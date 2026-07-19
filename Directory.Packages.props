@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  <ItemGroup Label="MagicOnion (RPC)">
+    <PackageVersion Include="MagicOnion.Abstractions" Version="7.10.0" />
+  </ItemGroup>
+  <ItemGroup Label="Serialization">
+    <PackageVersion Include="MessagePack" Version="3.1.7" />
+  </ItemGroup>
+</Project>
