@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using Platform.Common.Web;
+using Meeko.Contracts.Demux.Common;
 using MessagePack;
 
 namespace Meeko.Contracts.Demux.Admin;
@@ -44,8 +45,7 @@ public sealed class RatioVersionDto
 public sealed class ListRatiosQuery
 {
     [Key(0)] public string? Keyword { get; set; }
-    [Key(1)] public int Take { get; set; } = 200;
-    [Key(2)] public int Skip { get; set; }
+    [Key(1)] public PageQuery Page { get; set; } = new() { Take = 200 };
 }
 
 [MessagePackObject]

@@ -7,7 +7,7 @@ namespace Meeko.Contracts.Demux.LlmBackend;
 /// 所有上限为 <c>0</c> 表示该维度不限；窗口为请求数 / 成功数共用。
 /// </summary>
 [MessagePackObject]
-public sealed class AiTokenRateLimit
+public sealed class AccessTokenRateLimit
 {
     /// <summary>统计窗口（秒）；请求数 / 成功数共用。</summary>
     [Key(0)] public int WindowSeconds { get; set; } = 60;

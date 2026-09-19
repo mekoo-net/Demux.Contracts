@@ -10,10 +10,12 @@ public sealed class ProviderGroupDto
     [Key(1)] public string QueueGroup { get; set; } = string.Empty;
     [Key(2)] public string? VendorSlug { get; set; }
     [Key(3)] public string Status { get; set; } = "active";
-    [Key(4)] public int UpstreamModelCount { get; set; }
-    [Key(5)] public string? Notes { get; set; }
-    [Key(6)] public DateTime ImportedAtUtc { get; set; }
-    [Key(7)] public DateTime UpdatedAtUtc { get; set; }
+    /// <summary>渠道倍率，默认 1。</summary>
+    [Key(4)] public decimal PriceMultiplier { get; set; } = 1m;
+    [Key(5)] public int UpstreamModelCount { get; set; }
+    [Key(6)] public string? Notes { get; set; }
+    [Key(7)] public DateTime CreatedAtUtc { get; set; }
+    [Key(8)] public DateTime UpdatedAtUtc { get; set; }
 }
 
 [MessagePackObject]

@@ -9,6 +9,6 @@ public sealed class RatioSnapshot
     [Key(1)] public DateTime UpdatedAtUtc { get; set; }
     [Key(2)] public string[] Items { get; set; } = [];
     [Key(3)] public string[] DeletedKeys { get; set; } = [];
-    /// <summary>与 <see cref="Items"/> 同源的别名→渠道绑定（active pricing + active alias）。</summary>
+    /// <summary>与 <see cref="Items"/> 同源的别名→渠道绑定（active rate + active routeKey）。</summary>
     [Key(4)] public RatioRouteDto[] Routes { get; set; } = [];
 }

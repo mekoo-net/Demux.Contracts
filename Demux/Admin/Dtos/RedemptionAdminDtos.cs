@@ -97,8 +97,7 @@ public sealed class ListRedemptionsQuery
 {
     [Key(0)] public RedemptionStatus? Status { get; set; }
     [Key(1)] public string? Keyword { get; set; }
-    [Key(2)] public int Take { get; set; } = 50;
-    [Key(3)] public int Skip { get; set; }
+    [Key(2)] public PageQuery Page { get; set; } = new();
 }
 
 [MessagePackObject]

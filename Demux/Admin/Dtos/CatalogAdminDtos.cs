@@ -16,8 +16,10 @@ public sealed class VendorDto
     [Key(1)] public string QueueGroup { get; set; } = string.Empty;
     [Key(2)] public string? VendorSlug { get; set; }
     [Key(3)] public AiVendorStatus Status { get; set; }
-    [Key(4)] public DateTime CreatedAtUtc { get; set; }
-    [Key(5)] public DateTime UpdatedAtUtc { get; set; }
+    /// <summary>渠道倍率，默认 1。</summary>
+    [Key(4)] public decimal PriceMultiplier { get; set; } = 1m;
+    [Key(5)] public DateTime CreatedAtUtc { get; set; }
+    [Key(6)] public DateTime UpdatedAtUtc { get; set; }
 }
 
 [MessagePackObject]
@@ -43,10 +45,10 @@ public sealed class ModelMetaAdminDto
     [Key(1)] public string ModelName { get; set; } = string.Empty;
     [Key(2)] public string VendorName { get; set; } = string.Empty;
     [Key(3)] public string DisplayName { get; set; } = string.Empty;
-    [Key(4)] public string? Description { get; set; }
+    [Key(4)] public AiModelStatus Status { get; set; }
     [Key(5)] public AiModelEndpointType[] EndpointTypes { get; set; } = [];
-    [Key(6)] public AiModelStatus Status { get; set; }
-    [Key(7)] public string[] Tags { get; set; } = [];
+    [Key(6)] public string[] Tags { get; set; } = [];
+    [Key(7)] public string? Description { get; set; }
     [Key(8)] public DateTime CreatedAtUtc { get; set; }
     [Key(9)] public DateTime UpdatedAtUtc { get; set; }
 }
@@ -61,8 +63,8 @@ public sealed class UpsertModelMetaCommand
     [Key(1)] public string ModelName { get; set; } = string.Empty;
     [Key(2)] public string VendorName { get; set; } = string.Empty;
     [Key(3)] public string DisplayName { get; set; } = string.Empty;
-    [Key(4)] public string? Description { get; set; }
+    [Key(4)] public AiModelStatus Status { get; set; } = AiModelStatus.Active;
     [Key(5)] public AiModelEndpointType[] EndpointTypes { get; set; } = [];
-    [Key(6)] public AiModelStatus Status { get; set; } = AiModelStatus.Active;
-    [Key(7)] public string[] Tags { get; set; } = [];
+    [Key(6)] public string[] Tags { get; set; } = [];
+    [Key(7)] public string? Description { get; set; }
 }

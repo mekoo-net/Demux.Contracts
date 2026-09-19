@@ -6,7 +6,7 @@ namespace Meeko.Contracts.Demux.Internal;
 /// Internal Demux → Gateway invoke service.
 /// Bypasses sk- token auth; AccountUid is trusted and passed directly.
 /// Used by Meeko.Demux's PG (Playground) endpoint to forward chat requests
-/// to LLM backends via NATS without going through AiTokenAuthMiddleware.
+/// to LLM backends via NATS without going through AccessTokenAuthMiddleware.
 ///
 /// The Gateway must listen on an HTTP/2 port for this service.
 /// Configure via gateway.yaml: Server.GrpcPort (default 0 = disabled).

@@ -22,6 +22,8 @@ public interface IAiLogQueryService : IService<IAiLogQueryService>
     UnaryResult<AiLogStatDto[]> StatHourlyAsync(AiLogStatQuery query);
     UnaryResult<AiLogStatTotalsDto> StatTotalsAsync(AiLogStatQuery query);
     UnaryResult<AiVendorStatDto[]> StatByVendorAsync(AiVendorStatQuery query);
+    UnaryResult<AiModelConsumptionDto[]> StatByModelAsync(AiVendorStatQuery query);
+    UnaryResult<AiConsumptionReportDto> StatConsumptionReportAsync(AiConsumptionReportQuery query);
 
     UnaryResult<ReverseAiLogResult> ReverseAsync(ReverseAiLogCommand cmd);
 }

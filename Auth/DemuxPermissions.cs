@@ -15,8 +15,8 @@ public static class DemuxPermissions
     public const string ProvidersRead = "demux:providers:read";
     public const string ProvidersWrite = "demux:providers:write";
 
-    public const string PricingRead = "demux:pricing:read";
-    public const string PricingWrite = "demux:pricing:write";
+    public const string RateRead = "demux:rate:read";
+    public const string RateWrite = "demux:rate:write";
 
     public const string RoutesRead = "demux:routes:read";
     public const string RoutesWrite = "demux:routes:write";
@@ -40,7 +40,7 @@ public static class DemuxPermissions
         RedemptionRead, RedemptionWrite,
         ModelsRead, ModelsWrite,
         ProvidersRead, ProvidersWrite,
-        PricingRead, PricingWrite,
+        RateRead, RateWrite,
         RoutesRead, RoutesWrite,
         BackendsRead, BackendsWrite,
         UsageRead, UsageWrite,
@@ -52,7 +52,7 @@ public static class DemuxPermissions
     public static readonly IReadOnlyCollection<string> ReadOnly =
     [
         RedemptionRead,
-        ModelsRead, ProvidersRead, PricingRead, RoutesRead, BackendsRead,
+        ModelsRead, ProvidersRead, RateRead, RoutesRead, BackendsRead,
         UsageRead, UsersRead, TasksRead,
         RateLimitRead,
     ];

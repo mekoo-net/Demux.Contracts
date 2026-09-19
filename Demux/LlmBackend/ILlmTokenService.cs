@@ -9,10 +9,10 @@ namespace Meeko.Contracts.Demux.LlmBackend;
 public interface ILlmTokenService : IService<ILlmTokenService>
 {
     /// <summary>用 SHA-256(sk- 原文) 解析令牌；返回 null 表示不存在 / 已撤销 / 已过期。</summary>
-    UnaryResult<AiTokenResolution?> ResolveAsync(ResolveAiTokenQuery query);
+    UnaryResult<AccessTokenResolution?> ResolveAsync(ResolveAccessTokenQuery query);
 
     /// <summary>批量预热（LLM 后端启动 / 缓存大面积失效时一次拉回）。</summary>
-    UnaryResult<AiTokenResolution[]> ResolveBatchAsync(string[] keyHashes);
+    UnaryResult<AccessTokenResolution[]> ResolveBatchAsync(string[] keyHashes);
 
     /// <summary>
     /// 同步平台级 IP 速率限制策略（版本号条件拉取）：网关带上已知版本号，

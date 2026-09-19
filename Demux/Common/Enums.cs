@@ -1,6 +1,6 @@
 namespace Meeko.Contracts.Demux.Common;
 
-public enum AiTokenStatus
+public enum AccessTokenStatus
 {
     Active = 1,
     Disabled = 2,
