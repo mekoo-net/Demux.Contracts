@@ -263,7 +263,7 @@ public sealed class AiUsageLogDto
     [Key(4)] public string ModelName { get; set; } = string.Empty;
     /// <summary>请求命中的供应商（供应商组 / 内部 QueueGroup）。来自定价快照绑定，历史不丢。</summary>
     [Key(5)] public string? VendorKey { get; set; }
-    /// <summary>对外公开通道 slug（如 nai / pa），由 <see cref="VendorKey"/> 反查 Vendor.VendorSlug 得到；供前端映射渠道展示名。未配置 slug 时为 null。</summary>
+    /// <summary>对外公开通道 slug（如 nai / pa），由 <see cref="VendorKey"/> 反查 Vendor.VendorSlug 得到；前端原样展示。未配置 slug 时为 null。</summary>
     [Key(6)] public string? VendorPlug { get; set; }
     /// <summary>请求命中的上游真实模型名（vendor_model）。来自别名快照绑定，历史不丢。</summary>
     [Key(7)] public string? VendorModel { get; set; }
@@ -557,7 +557,7 @@ public sealed class LogBillSummaryDto
     /// <summary>对外模型别名（routeKey）；快照缺失时为 null。</summary>
     [Key(2)] public string? ModelName { get; set; }
 
-    /// <summary>对外渠道 slug（VendorSlug，如 nai / pa），供前端映射渠道展示名；未配置时为 null。</summary>
+    /// <summary>对外渠道 slug（VendorSlug，如 nai / pa），前端原样展示；未配置时为 null。</summary>
     [Key(3)] public string? VendorPlug { get; set; }
 
     /// <summary>计费类型：per_token / per_call / per_image / per_video / per_audio_minute / per_character。</summary>
